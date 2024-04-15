@@ -1,5 +1,6 @@
 package org.example.lab6.entity;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
@@ -18,6 +19,6 @@ public class Patient extends User {
     private LocalDate dateOfBirth;
 
     private String patientNo;
-    @OneToMany(mappedBy = "patient")
+    @OneToMany(mappedBy = "patient", cascade = CascadeType.REMOVE , orphanRemoval = true)
     private List<Appointment> appointments;
 }
