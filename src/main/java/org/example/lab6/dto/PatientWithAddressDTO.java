@@ -53,8 +53,10 @@ public class PatientWithAddressDTO {
         patient.setLastName(lastName);
         patient.setEmail(email);
         patient.setPhone(phone);
+        if(mailingAddress != null) {
 
-        patient.setMailingAddress(mailingAddress.toAddress(getMailingAddress()));
+            patient.setMailingAddress(mailingAddress.toAddress(getMailingAddress()));
+        }
         patient.setDateOfBirth(dateOfBirth);
         patient.setPatientNo(patientNo);
 
